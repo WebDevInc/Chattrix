@@ -1,0 +1,7 @@
+{% for msg in messages %}
+  <div class="message" style="margin-bottom: 10px;">
+    <strong>{{ 'You' if msg.sender_id == user.id else receiver.email }}:</strong>
+    {{ msg.content }}
+    <small style="color: gray; margin-left: 10px;">{{ msg.timestamp.strftime('%H:%M') }}</small>
+  </div>
+{% endfor %}
